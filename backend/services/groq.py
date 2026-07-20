@@ -10,7 +10,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+_client = None
+
+def get_groq_client():
+    global _client
+    if _client is None:
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise ValueError("GROQ_API_KEY environment variable is not configured.")
+        _client = Groq(api_key=api_key)
+    return _client
 
 SYSTEM_PROMPT = """
 You are an expert health coaching intelligence analyst. Your task is to carefully analyze a client-coach conversation and produce a structured JSON report.
@@ -148,7 +157,7 @@ async def analyze_conversation(text: str) -> dict:
         f"CONVERSATION:\n---\n{text}\n---"
     )
 
-    response = client.chat.completions.create(
+    response = get_groq_client().chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
