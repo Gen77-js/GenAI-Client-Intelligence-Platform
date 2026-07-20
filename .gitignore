@@ -1,0 +1,37 @@
+# Environment files
+.env
+backend/.env
+backend/venv/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Python cache & build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large documentation artifacts (keep manual copies, ignore generated html/pdf if desired, but user wants them compiled, let's keep markdown manual and ignore generated HTML)
+UNIFIED_DOCUMENTATION.html

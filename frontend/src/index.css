@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-900 text-gray-100 font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-800 border border-surface-600 rounded-2xl p-6;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .card-glow {
+    @apply card;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99,102,241,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply bg-surface-700 hover:bg-surface-600 text-gray-200 font-medium px-5 py-2.5 rounded-xl transition-all duration-200 border border-surface-500 flex items-center gap-2;
+  }
+
+  .btn-approve {
+    @apply bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-400 border border-emerald-600/30 font-medium px-3 py-1.5 rounded-lg transition-all duration-200 text-sm flex items-center gap-1.5;
+  }
+
+  .btn-reject {
+    @apply bg-red-600/20 hover:bg-red-600/40 text-red-400 border border-red-600/30 font-medium px-3 py-1.5 rounded-lg transition-all duration-200 text-sm flex items-center gap-1.5;
+  }
+
+  .btn-edit {
+    @apply bg-amber-600/20 hover:bg-amber-600/40 text-amber-400 border border-amber-600/30 font-medium px-3 py-1.5 rounded-lg transition-all duration-200 text-sm flex items-center gap-1.5;
+  }
+
+  .badge-risk-high {
+    @apply bg-red-500/15 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-risk-medium {
+    @apply bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-risk-low {
+    @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .source-confirmed {
+    @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .source-client {
+    @apply bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .source-inference {
+    @apply bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .source-missing {
+    @apply bg-gray-500/10 text-gray-400 border border-gray-500/20 px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .section-header {
+    @apply flex items-center gap-3 mb-5;
+  }
+
+  .section-icon {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full bg-surface-600 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  .review-approved {
+    @apply ring-2 ring-emerald-500/40;
+  }
+
+  .review-rejected {
+    @apply ring-2 ring-red-500/40 opacity-60;
+  }
+
+  .review-edited {
+    @apply ring-2 ring-amber-500/40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #151524;
+}
+::-webkit-scrollbar-thumb {
+  background: #252540;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e2e50;
+}
+
+/* Upload drag zone */
+.upload-zone {
+  transition: all 0.25s ease;
+}
+
+.upload-zone.drag-over {
+  @apply border-brand-400 bg-brand-900/20;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+/* Spinner */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(99,102,241,0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Glassmorphism overlay */
+.glass {
+  background: rgba(21, 21, 36, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
