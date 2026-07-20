@@ -61,6 +61,21 @@ Every extracted insight is strictly mapped to an evidence quote, a confidence sc
 
 ---
 
+## App Demo Video
+
+A professional software demonstration video showcasing the real, fully functional GenAI Client Intelligence Platform has been rendered. The video captures the entire end-to-end workflow, including:
+
+1. **Platform Tour**: Deep-dive into the Home Page design, upload container, and empty state dashboard.
+2. **Document Ingestion**: Dragging and dropping `Day 1.pdf`, triggering real-time parsing, and analyzing conversation metrics.
+3. **LLM Analytics**: Streaming extracted categories (Nutrition, Exercise, Sleep, Barriers, Risk Flags) from Groq Llama-3.3-70B.
+4. **Evidence CIT Grounding**: Checking sources, confidence ratings, and exact contextual quotes in the Evidence Panel.
+5. **Human-in-the-Loop Controls**: Reviewing, editing, and approving findings.
+6. **Export Functions**: Downloading approved reports as formatted PDF files and clean structured JSON schemas.
+
+* The final recording is saved locally at: [screenshots/platform_demo.mp4](file:///c:/Users/vs111/Desktop/genaiintern/screenshots/platform_demo.mp4)
+
+---
+
 ## Folder Structure
 
 ```
