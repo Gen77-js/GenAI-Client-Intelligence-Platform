@@ -35,3 +35,6 @@ Thumbs.db
 
 # Large documentation artifacts (keep manual copies, ignore generated html/pdf if desired, but user wants them compiled, let's keep markdown manual and ignore generated HTML)
 UNIFIED_DOCUMENTATION.html
+
+# Submission Archives
+*_Submission.zip
